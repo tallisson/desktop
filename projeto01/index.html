@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Minha Calculadora em Javascript</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <main class="conteudo">
+    <div class="titulo-conteudo">
+      Minha Calculadora
+    </div>
+
+    <form method="GET">
+      <div class="div-form">
+        <label for="valor1">
+          Valor 1:
+          <input 
+            type="number" 
+            class="input-form" 
+            id="valor1" 
+            name="valor1" 
+            required
+          >
+        </label>
+      </div>
+
+      <div class="div-form">
+        <label for="valor2">
+          Valor 2:
+          <input 
+            type="number" 
+            class="input-form" 
+            id="valor2" 
+            name="valor2"
+            required
+          >
+        </label>
+      </div>
+
+      <div class="div-form div-res">
+      </div>
+
+      <div class="div-form div-bnt">
+        <button class="btn-form" onclick="js:somar();">+</button>
+        <button class="btn-form" onclick="js:subtrair();">-</button>
+        <button class="btn-form" onclick="js:multiplicar();">*</button>
+        <button class="btn-form" onclick="js:dividir();">/</button>
+      </div>
+    </form>
+  </main>
+
+  <script type="text/javascript" src="scripts.js"></script>
+</body>
+</html>

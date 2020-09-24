@@ -1,0 +1,52 @@
+@charset 'utf-8';
+
+body {
+  /* Reset Básico de CSS */
+  border: 0;
+  padding: 0;
+  margin: 0;
+
+  background-color: blueviolet;
+
+  /* Tamanho da fonte = 150% do tamanho da fonte padrão (16px) = 24px */
+  font-size: 1.5rem; 
+}
+
+.conteudo {
+  /* Conteúdo vai ocupar 100% viewport height */
+  min-height: 100vh; 
+
+  /* Criar um flexbox */
+  display: flex; 
+  flex-direction: column;
+  /* Centralizar o componente */
+  justify-content: center; 
+  align-items: center;
+}
+
+form {
+  border: 2px dashed #ffffff;
+  /* 5% do view. height pro padding top e bottom */
+  /* 5% do view. width pro padding left e right */
+  padding: 5vh 5vw;       
+}
+.div-form {
+  margin-bottom: 10px;
+}
+.input-form {
+  width: 100%;
+
+  font-size: 1.5rem;
+}
+.div-bnt {
+  text-align: center;
+}
+.btn-form {
+  /* Tamanho da fonte igual a 120% do tamanho padrão */
+  font-size: 1.2rem;
+}
+.div-res {
+  padding: 2px 5px;
+  color: #ffffff;
+  background-color: chocolate;
+}
