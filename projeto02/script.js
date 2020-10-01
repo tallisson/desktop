@@ -6,7 +6,17 @@ window.onload = function() {
   // Testar URL para ver se existe string de consulta
   queryString = location.href.split('?')[1] || null;
   if(queryString != null) {
-    queryString = queryString.replace('nome=', '');
+    queryString = queryString.replace('nome=', ''); 
+    document.title = 'Atualizar Contato';
+    
+    h1 = document.getElementsByTagName('h1')[0];
+    h1.innerHTML = 'Atualize o Contato';
+
+    let pos = -1;   
+    do {
+      pos = queryString.indexOf('%20');
+      queryString = queryString.replace('%20', ' ');
+    } while(pos != -1);
   }
 
   // Capturar o form

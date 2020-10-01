@@ -4,5 +4,5 @@
 
 ### Construção de App com HTML, CSS, JS e Electron JS
 
-1. [Projeto de Calculadora em Javascript](https://tallisson.github.io/desktop/projeto01/index.html)
-2. [Projeto de Agenda de Contatos com Local Storage](https://tallisson.github.io/desktop/projeto02/index.html)
+1. [Projeto Calculadora em Javascript](https://tallisson.github.io/desktop/projeto01/index.html)
+2. [Projeto Agenda de Contatos com Local Storage](https://tallisson.github.io/desktop/projeto02/index.html)
