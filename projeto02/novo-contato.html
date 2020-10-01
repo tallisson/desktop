@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cadastrar Novo Contato</title>
+
+  <!-- CSS Base do Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script type="text/javascript" src="script.js"></script>
+</head>
+<body style="background-color: #cccccc;">
+  <main class="container pt-4">
+    <div class="float-right">
+      <button class="btn btn-secondary"
+        onclick="document.location.href = 'index.html';"
+      >
+        Home
+      </button>
+    </div>
+
+    <h1 style="border-bottom: 2px dashed #000000;">Cadastre o Contato</h1>
+
+    <div class="alert alert-primary" role="alert" style="display: none;">
+      <span id="msg">Contato inserido com sucesso!</span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>      
+
+    <form method="POST">
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" class="form-control" id="nome" placeholder="Seu nome">
+      </div>
+      <div class="form-group">
+        <label for="zap">Zap</label>
+        <input type="tel" class="form-control" id="zap" placeholder="Seu Zap">
+      </div>
+      <div class="form-group">
+        <label for="instagram">Instagram</label>
+        <input type="text" class="form-control" id="instagram" placeholder="Seu Instagram">
+      </div>
+      <div class="form-group">
+        <label for="endereco">Endereço</label>
+        <input type="text" class="form-control" id="endereco" placeholder="Seu Endereço">
+      </div>
+      <div class="text-right">
+        <button type="submit" class="btn btn-primary" onclick="js:salvarContato();">
+          Enviar
+        </button>
+      </div>
+    </form>
+  </main>
+
+  <!-- Scripts Base para o Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
