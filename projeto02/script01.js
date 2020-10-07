@@ -24,28 +24,39 @@ function capturarTdsContatos() {
        contatos
      */
     const contatoString = localStorage.getItem(chave);
-    // Transformar contato no formato de string em obj
-    const contato = JSON.parse(contatoString);
+    
+    try {
+      // Transformar contato no formato de string em obj
+      const contato = JSON.parse(contatoString);
 
-    tbody.innerHTML += `
-      <tr>
-        <td>${contato.nome}</td>
-        <td>${contato.zap}</td>
-        <td>${contato.instagram}</td>
-        <td>${contato.endereco}</td>
-        <td class="text-center">
-          <button class="btn btn-primary"
-            onclick="document.location.href='novo-contato.html?nome=${contato.nome}'"  
-          >
-            Atualizar
-          </button>
-          <button class="btn btn-danger" onclick="removerContato('${chave}')">
-            Remover
-          </button>
-        </td>
-      </tr>
-    `
-  };
+      tbody.innerHTML += `
+        <tr>
+          <td>${contato.nome}</td>
+          <td>${contato.zap}</td>
+          <td>${contato.instagram}</td>
+          <td>${contato.endereco}</td>
+          <td class="text-center">
+            <button class="btn btn-primary"
+              onclick="js:atualizarContato('${contato.nome}');"  
+            >
+              Atualizar
+            </button>
+            <button class="btn btn-danger" onclick="js:removerContato('${chave}');">
+              Remover
+            </button>
+          </td>
+        </tr>
+      `
+    } catch(error) {
+      console.log(error.message);
+      continue;
+    }
+  }
+}
+
+function atualizarContato(nome) {
+  localStorage.setItem('atualiza', nome);
+  location.href = 'novo-contato.html';
 }
 
 function removerContato(chave) {

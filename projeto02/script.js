@@ -1,30 +1,19 @@
 /* Manipulação do local storage e armazenamento de dados
    em um arquivo gerenciado pelo navegador */
-let queryString = null;
+let atualizaContato = null;
 
 window.onload = function() {
-  // Testar URL para ver se existe string de consulta
-  queryString = location.href.split('?')[1] || null;
-  if(queryString != null) {
-    queryString = queryString.replace('nome=', ''); 
-    document.title = 'Atualizar Contato';
-    
-    h1 = document.getElementsByTagName('h1')[0];
-    h1.innerHTML = 'Atualize o Contato';
-
-    let pos = -1;   
-    do {
-      pos = queryString.indexOf('%20');
-      queryString = queryString.replace('%20', ' ');
-    } while(pos != -1);
-  }
+  atualizaContato = localStorage.getItem('atualiza') || null;
 
   // Capturar o form
   const listaDeForms = document.getElementsByTagName('form');
   const form = listaDeForms[0];
 
-  if(queryString != null) {
-    const contatoString = localStorage.getItem(queryString);
+  if(atualizaContato != null) {
+    document.title = 'Atualiza Cadastro';
+    document.getElementsByTagName('h1')[0].innerHTML = 'Atualize o Cadastro';
+
+    const contatoString = localStorage.getItem(atualizaContato);    
     const contato = JSON.parse(contatoString);
 
     const listaDeInputs = document.getElementsByTagName('input');
@@ -56,10 +45,10 @@ function salvarContato() {
   const contatoString = JSON.stringify(contato);
 
   // Salvar esse objeto no localStorage
-  if(queryString == null) {
+  if(atualizaContato == null) {
     localStorage.setItem(contato.nome, contatoString);
   } else {
-    localStorage.removeItem(queryString);
+    localStorage.removeItem(atualizaContato);
     localStorage.setItem(contato.nome, contatoString);
   }
 
@@ -68,9 +57,13 @@ function salvarContato() {
   alerta.style = "display: block;"
   
   const spanMsg = document.getElementById('msg');
-  if(queryString == null) {    
+  if(atualizaContato == null) {    
     spanMsg.innerHTML = 'Contato adicionado com sucesso!';
   } else {
     spanMsg.innerHTML = 'Contato atualizado com sucesso!';
   }
+}
+
+function voltarHome() {
+  document.location.href = 'index.html';
 }
