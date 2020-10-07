@@ -62,8 +62,15 @@ function salvarContato() {
   } else {
     spanMsg.innerHTML = 'Contato atualizado com sucesso!';
   }
+  deletaAtualiza();
+}
+
+function deletaAtualiza() {
+  localStorage.removeItem('atualiza');
 }
 
 function voltarHome() {
   document.location.href = 'index.html';
+
+  deletaAtualiza();
 }

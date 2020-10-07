@@ -68,3 +68,9 @@ function removerContato(chave) {
     capturarTdsContatos();
   }
 }
+
+function criarContato() {
+  localStorage.removeItem('atualiza');
+  
+  document.location = 'novo-contato.html';
+}
